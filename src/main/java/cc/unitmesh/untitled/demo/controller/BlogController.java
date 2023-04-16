@@ -7,8 +7,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 public class BlogController {
-    @Autowired
     BlogService blogService;
+
+    public BlogController(BlogService blogService) {
+        this.blogService = blogService;
+    }
 
     @RequestMapping("/")
     public String index(){
