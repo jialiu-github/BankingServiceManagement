@@ -1,7 +1,7 @@
 package cc.unitmesh.untitled.demo.controller;
 
 import cc.unitmesh.untitled.demo.dto.CreateBlogDto;
-import cc.unitmesh.untitled.demo.model.BlogPost;
+import cc.unitmesh.untitled.demo.entity.BlogPost;
 import cc.unitmesh.untitled.demo.service.BlogService;
 import org.springframework.stereotype.Controller;
 

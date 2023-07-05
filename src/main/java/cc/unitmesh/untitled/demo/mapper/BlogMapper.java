@@ -1,7 +1,7 @@
 package cc.unitmesh.untitled.demo.mapper;
 
 import cc.unitmesh.untitled.demo.dto.CreateBlogDto;
-import cc.unitmesh.untitled.demo.model.BlogPost;
+import cc.unitmesh.untitled.demo.entity.BlogPost;
 
 public class BlogMapper {
 

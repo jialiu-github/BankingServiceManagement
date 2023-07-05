@@ -1,4 +1,4 @@
-package cc.unitmesh.untitled.demo.model;
+package cc.unitmesh.untitled.demo.entity;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

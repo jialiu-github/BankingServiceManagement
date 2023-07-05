@@ -1,6 +1,6 @@
 package cc.unitmesh.untitled.demo.repository;
 
-import cc.unitmesh.untitled.demo.model.BlogPost;
+import cc.unitmesh.untitled.demo.entity.BlogPost;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
