@@ -7,6 +7,9 @@ import cc.unitmesh.untitled.demo.repository.BlogRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Service
 public class BlogService {
     @Autowired
@@ -16,5 +19,10 @@ public class BlogService {
 
     public BlogPost createBlog(CreateBlogDto blogDto) {
         return blogRepository.save(blogMapper.toEntity(blogDto));
+    }
+
+    public List<BlogPost> getAllBlogPosts() {
+        // todo
+        return new ArrayList();
     }
 }
