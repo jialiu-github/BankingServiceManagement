@@ -1,9 +1,9 @@
 package cc.unitmesh.untitled.demo.controller;
 
+import cc.unitmesh.untitled.demo.dto.CreateBlogDto;
+import cc.unitmesh.untitled.demo.model.BlogPost;
 import cc.unitmesh.untitled.demo.service.BlogService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 public class BlogController {
@@ -13,8 +13,8 @@ public class BlogController {
         this.blogService = blogService;
     }
 
-    @RequestMapping("/")
-    public String index(){
-        return "index";
+    public Long createBlog(CreateBlogDto blogDto) {
+        BlogPost blog = blogService.createBlog(blogDto);
+        return blog.getId();
     }
 }

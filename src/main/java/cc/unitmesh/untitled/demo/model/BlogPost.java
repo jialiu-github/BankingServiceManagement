@@ -6,23 +6,27 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class Post {
+public class BlogPost {
     @Id
-    @GeneratedValue(strategy= GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
     private String title;
     private String content;
     private String author;
 
-    public Post(String title, String content, String author) {
+    public BlogPost(String title, String content, String author) {
         this.title = title;
         this.content = content;
         this.author = author;
     }
 
-    public Post() {
+    public BlogPost() {
 
+    }
+
+    public Long getId() {
+        return this.id;
     }
 
     public String getTitle() {
