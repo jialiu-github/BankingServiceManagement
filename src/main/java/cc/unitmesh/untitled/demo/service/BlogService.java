@@ -24,4 +24,6 @@ public class BlogService {
         // todo
         return new ArrayList<>();
     }
+
+    // delete blog
 }
