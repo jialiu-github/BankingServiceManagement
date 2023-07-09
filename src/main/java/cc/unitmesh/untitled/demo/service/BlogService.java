@@ -1,6 +1,5 @@
 package cc.unitmesh.untitled.demo.service;
 
-import cc.unitmesh.untitled.demo.dto.CreateBlogDto;
 import cc.unitmesh.untitled.demo.mapper.BlogMapper;
 import cc.unitmesh.untitled.demo.entity.BlogPost;
 import cc.unitmesh.untitled.demo.repository.BlogRepository;
@@ -17,12 +16,12 @@ public class BlogService {
 
     BlogMapper blogMapper;
 
-    public BlogPost createBlog(CreateBlogDto blogDto) {
-        return blogRepository.save(blogMapper.toEntity(blogDto));
+    public BlogPost createBlog(BlogPost blogDto) {
+        return blogRepository.save(blogDto);
     }
 
     public List<BlogPost> getAllBlogPosts() {
         // todo
-        return new ArrayList();
+        return new ArrayList<>();
     }
 }

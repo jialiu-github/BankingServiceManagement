@@ -3,10 +3,10 @@ package cc.unitmesh.untitled.demo.controller;
 import cc.unitmesh.untitled.demo.dto.CreateBlogDto;
 import cc.unitmesh.untitled.demo.entity.BlogPost;
 import cc.unitmesh.untitled.demo.service.BlogService;
+import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 
 import java.util.List;
 
@@ -19,8 +19,10 @@ public class BlogController {
     }
 
     @PostMapping("/blog")
-    public Long createBlog(CreateBlogDto blogDto) {
-        return blogService.createBlog(blogDto).getId();
+    public BlogPost createBlog(CreateBlogDto blogDto) {
+        BlogPost blogPost = new BlogPost();
+        BeanUtils.copyProperties(blogDto, blogPost);
+        return blogService.createBlog(blogPost);
     }
 
     @GetMapping("/blog")
