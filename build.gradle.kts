@@ -22,6 +22,8 @@ dependencies {
 
     implementation("org.flywaydb:flyway-core")
 
+    compileOnly("org.projectlombok:lombok:1.18.28")
+
     // h2
     implementation("com.h2database:h2")
 

@@ -4,10 +4,7 @@ import cc.unitmesh.untitled.demo.dto.CreateBlogDto;
 import cc.unitmesh.untitled.demo.entity.BlogPost;
 import cc.unitmesh.untitled.demo.service.BlogService;
 import org.springframework.beans.BeanUtils;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -21,7 +18,7 @@ public class BlogController {
     }
 
     @PostMapping("/blog")
-    public BlogPost createBlog(CreateBlogDto blogDto) {
+    public BlogPost createBlog(@RequestBody CreateBlogDto blogDto) {
         BlogPost blogPost = new BlogPost();
         BeanUtils.copyProperties(blogDto, blogPost);
         return blogService.createBlog(blogPost);
