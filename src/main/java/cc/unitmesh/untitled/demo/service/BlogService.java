@@ -1,6 +1,5 @@
 package cc.unitmesh.untitled.demo.service;
 
-import cc.unitmesh.untitled.demo.mapper.BlogMapper;
 import cc.unitmesh.untitled.demo.entity.BlogPost;
 import cc.unitmesh.untitled.demo.repository.BlogRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,8 +12,6 @@ import java.util.List;
 public class BlogService {
     @Autowired
     BlogRepository blogRepository;
-
-    BlogMapper blogMapper;
 
     public BlogPost createBlog(BlogPost blogDto) {
         return blogRepository.save(blogDto);
