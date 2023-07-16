@@ -1,7 +1,9 @@
 package cc.unitmesh.untitled.demo.controller;
 
+import cc.unitmesh.untitled.demo.dto.CreateBlogRequest;
 import cc.unitmesh.untitled.demo.entity.BlogPost;
 import cc.unitmesh.untitled.demo.service.BlogService;
+import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.BeanUtils;
 import org.springframework.web.bind.annotation.*;
 
@@ -16,5 +18,5 @@ public class BlogController {
         this.blogService = blogService;
     }
 
-    // delete blog
+    // create blog
 }
