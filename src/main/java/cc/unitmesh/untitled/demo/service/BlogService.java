@@ -17,10 +17,19 @@ public class BlogService {
         return blogRepository.save(blogDto);
     }
 
-    public List<BlogPost> getAllBlogPosts() {
-        // todo
-        return new ArrayList<>();
+    public BlogPost getBlogById(Long id) {
+        return blogRepository.findById(id).orElse(null);
     }
 
-    // delete blog
+    public BlogPost updateBlog(Long id, BlogPost blogDto) {
+        return blogRepository.findById(id).map(blog -> {
+            blog.setTitle(blogDto.getTitle());
+            blog.setContent(blogDto.getContent());
+            return blogRepository.save(blog);
+        }).orElse(null);
+    }
+
+    public void deleteBlog(Long id) {
+        blogRepository.deleteById(id);
+    }
 }
