@@ -1,19 +1,43 @@
 package cc.unitmesh.untitled.demo.controller;
 
+import cc.unitmesh.untitled.demo.entity.BlogPost;
+import cc.unitmesh.untitled.demo.repository.BlogRepository;
 import org.junit.jupiter.api.Test;
+import org.mockito.Mockito;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.test.web.servlet.MockMvc;
 
+import java.util.Optional;
+
+import static org.hamcrest.Matchers.containsString;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
+
 @SpringBootTest
+@AutoConfigureMockMvc
 class BlogControllerTest {
 
-    @SuppressWarnings("SpringJavaInjectionPointsAutowiringInspection")
     @Autowired
     private MockMvc mockMvc;
+
+    @MockBean
+    private BlogRepository blogRepository;
+
     @Test
-    void should_get_blog_one_when_has_blog() throws Exception {
+    public void should_return_correct_blog_information_when_post_item() throws Exception {
+        BlogPost mockBlog = new BlogPost("Test Title", "Test Content", "Test Author");
+        mockBlog.setId(1L);
 
+        Mockito.when(blogRepository.findById(1L)).thenReturn(Optional.of(mockBlog));
 
+        mockMvc.perform(get("/blog/1"))
+                .andExpect(status().isOk())
+                .andExpect(content().string(containsString("Test Title")))
+                .andExpect(content().string(containsString("Test Content")));
     }
 }
+

@@ -19,7 +19,12 @@ public class BlogController {
         this.blogService = blogService;
     }
 
-    // create blog
+    @ApiOperation(value = "Get Blog by id")
+    @GetMapping("/{id}")
+    public BlogPost getBlog(@PathVariable Long id) {
+        return blogService.getBlogById(id);
+    }
+
     @ApiOperation(value = "Create a new blog")
     @PostMapping("/")
     public BlogPost createBlog(@RequestBody CreateBlogRequest request) {
