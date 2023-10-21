@@ -39,5 +39,7 @@ class BlogControllerTest {
                 .andExpect(content().string(containsString("Test Title")))
                 .andExpect(content().string(containsString("Test Content")));
     }
+
+    // Given 我是一个员工，已经登录到 OKR 系统中，When 我选择更新我的 OKR 进展情况，Then 我可以看到一个可以填写进展情况的表单。
 }
 
