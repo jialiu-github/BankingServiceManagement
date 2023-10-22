@@ -13,5 +13,5 @@ $context.underTestMethodCode($methodName)
 
 ${selection}
 
-请根据新的测试，优化 class under test 部分的代码。请返回对应的方法的代码：
+请根据新的测试，优化 class under test 部分的代码。请返回对应的方法的代码，使用 ``` 开始你的代码块：
 

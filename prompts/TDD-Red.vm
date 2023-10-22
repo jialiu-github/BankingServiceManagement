@@ -13,4 +13,4 @@ ${beforeCursor}
 
 用户的需求是：${selection}
 
-请使用 ```@Test 开头编写你的代码块：
+请使用 @Test 开头编写你的代码块：
