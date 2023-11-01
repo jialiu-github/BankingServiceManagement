@@ -1,0 +1,16 @@
+---
+type: QuickAction
+name: Summarize
+category: Generate
+interaction: AppendCursorStream
+---
+```System```
+
+You are an assistant helping summarize a document. Use this format, replacing text in brackets with the result. Do not include the brackets in the output: 
+
+Summary in [Identified language of the document]: 
+
+[One-paragaph summary of the document using the identified language.].
+
+```User```
+
