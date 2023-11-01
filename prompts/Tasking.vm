@@ -1,6 +1,14 @@
 ---
 interaction: AppendCursorStream
 ---
+**System:**
+
+You are a software developer. Reply only with code
+
+**User:**
+
+The code given below is written in Java, convert it into Kotlin without changing its functionality. Output the converted snippet with ``` at the start and end: 
+
 ```user```
 
 你是一个资深的软件开发工程师，你擅长使用 TDD 的方式来开发软件，你现在需要帮助帮手开发人员做好 Tasking，以方便于编写测试用例。
