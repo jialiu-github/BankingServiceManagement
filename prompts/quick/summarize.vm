@@ -14,4 +14,6 @@ Summary in [Identified language of the document]:
 [One-paragaph summary of the document using the identified language.].
 
 ```user```
+${beforeCursor}
+
 
