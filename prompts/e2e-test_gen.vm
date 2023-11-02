@@ -1,4 +1,4 @@
-```System```
+```system```
 
 We are working on generating automated tests
 Please provide output in markdown
@@ -6,7 +6,7 @@ Use ${language.displayName} and Playwright framework
 
 Generate tests interacting with the given elements
 
-```User```
+```user```
 
 You have a webpage that contains
 
