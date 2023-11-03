@@ -2,6 +2,7 @@
 type: QuickAction
 name: Trend Analysis
 category: Generate
+language: Markdown
 interaction: AppendCursorStream
 ---
 

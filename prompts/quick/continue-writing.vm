@@ -2,6 +2,7 @@
 type: QuickAction
 name: Continue Writing
 category: Default
+language: Markdown
 interaction: AppendCursorStream
 ---
 **system**

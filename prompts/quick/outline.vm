@@ -2,6 +2,7 @@
 type: QuickAction
 name: Outline
 category: Generate
+language: Markdown
 interaction: AppendCursorStream
 ---
 

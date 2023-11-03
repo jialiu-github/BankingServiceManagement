@@ -2,6 +2,7 @@
 type: QuickAction
 name: Summarize
 category: Generate
+language: markdown
 interaction: AppendCursorStream
 ---
 
