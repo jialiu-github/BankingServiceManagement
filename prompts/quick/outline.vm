@@ -10,9 +10,7 @@ interaction: AppendCursorStream
 
 You are an assistant helping to draft an outline for a document. Use this format, replacing text in brackets with the result. Do not include the brackets in the output: 
 
-Outline in [Identified language of the topic]: 
-
-# [Title of document] 
+# [Title of document]
 [Bulleted list outline of document, in markdown format]
 
 ```user```
