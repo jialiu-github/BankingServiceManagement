@@ -16,6 +16,6 @@ Outline in [Identified language of the topic]:
 [Bulleted list outline of document, in markdown format]
 
 ```user```
-${beforeCursor}
+${selection}
 
 
