@@ -16,6 +16,8 @@ dependencies {
     implementation("org.springframework.boot:spring-boot-starter-jdbc")
     implementation("org.springframework.boot:spring-boot-starter-data-jdbc")
     implementation("org.springframework.boot:spring-boot-starter-data-jpa")
+    implementation("org.json:json:20231013")
+
     testImplementation("junit:junit:4.13.1")
 
     developmentOnly("org.springframework.boot:spring-boot-devtools")
