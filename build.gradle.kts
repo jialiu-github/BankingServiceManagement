@@ -2,6 +2,7 @@ plugins {
     java
     id("org.springframework.boot") version "2.7.10"
     id("io.spring.dependency-management") version "1.0.15.RELEASE"
+    kotlin("jvm")
 }
 
 group = "cc.unitmesh.untitled"
@@ -30,8 +31,12 @@ dependencies {
     implementation("com.h2database:h2")
 
     testImplementation("org.springframework.boot:spring-boot-starter-test")
+    implementation(kotlin("stdlib-jdk8"))
 }
 
 tasks.withType<Test> {
     useJUnitPlatform()
+}
+kotlin {
+    jvmToolchain(11)
 }
