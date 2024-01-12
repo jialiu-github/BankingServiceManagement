@@ -1,13 +1,15 @@
 package cc.unitmesh
 
+import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.*
 
 @RestController
 @RequestMapping("/user")
 class UserController() {
     @GetMapping
-    fun getUsers(): UserDTO {
-        return UserDTO(1L, "username", "email", "name", "surname")
+    fun getUsers(): ResponseEntity<List<UserDTO>> {
+        val listOf = listOf(UserDTO(1L, "username", "email", "name", "surname"))
+        return ResponseEntity.ok(listOf)
     }
 }
 
