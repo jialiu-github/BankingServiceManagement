@@ -1,0 +1,5 @@
+---
+interaction: ChatPanel
+---
+
+用户故事。根据如下的需求，编写用户故事：${selection}。

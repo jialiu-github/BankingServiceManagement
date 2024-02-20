@@ -1,0 +1,5 @@
+---
+interaction: ChatPanel
+---
+
+帮我设计一个银行的 API: ${selection}
