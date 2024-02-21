@@ -1,8 +1,6 @@
 ---
-type: QuickAction
 name: 续写
 category: Default
-language: Markdown
 interaction: AppendCursorStream
 ---
 

@@ -1,8 +1,6 @@
 ---
-type: QuickAction
 name: 趋势分析
 category: Generate
-language: markdown
 interaction: ChatPanel
 ---
 
@@ -12,4 +10,3 @@ interaction: ChatPanel
 
 ```user```
 ${selection}
-

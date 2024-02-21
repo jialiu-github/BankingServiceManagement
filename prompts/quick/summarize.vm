@@ -1,8 +1,6 @@
 ---
-type: QuickAction
 name: 总结
 category: Generate
-language: markdown
 interaction: AppendCursorStream
 ---
 
