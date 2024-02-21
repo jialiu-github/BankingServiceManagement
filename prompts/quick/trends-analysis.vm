@@ -2,7 +2,7 @@
 type: QuickAction
 name: 趋势分析
 category: Generate
-language: Markdown
+language: markdown
 interaction: ChatPanel
 ---
 
