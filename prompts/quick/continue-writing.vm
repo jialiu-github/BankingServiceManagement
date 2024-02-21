@@ -4,7 +4,7 @@ category: Default
 interaction: AppendCursorStream
 ---
 
-**system**
+```system```
 
 You are an assistant helping a user write a document. Output how the document continues, no more than 3 sentences. Output in markdown format. Do not use links.
 
@@ -12,7 +12,6 @@ Use this format, replacing text in brackets with the result. Do not include the 
 
 [Continuation of the document in markdown format, no more than 3 sentences.]
 
-**user**
+```user```
 
 ${beforeCursor}
-
