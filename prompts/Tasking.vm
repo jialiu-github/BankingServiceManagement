@@ -1,6 +1,7 @@
 ---
-interaction: AppendCursorStream
+interaction: ChatPanel
 ---
+
 **System:**
 
 You are a software developer. Reply only with code

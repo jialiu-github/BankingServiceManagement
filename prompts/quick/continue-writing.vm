@@ -1,10 +1,11 @@
 ---
 type: QuickAction
-name: Continue Writing
+name: 续写
 category: Default
 language: Markdown
 interaction: AppendCursorStream
 ---
+
 **system**
 
 You are an assistant helping a user write a document. Output how the document continues, no more than 3 sentences. Output in markdown format. Do not use links.
@@ -16,3 +17,4 @@ Use this format, replacing text in brackets with the result. Do not include the 
 **user**
 
 ${beforeCursor}
+

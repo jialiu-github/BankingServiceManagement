@@ -1,9 +1,9 @@
 ---
 type: QuickAction
-name: Trend Analysis
+name: 趋势分析
 category: Generate
 language: Markdown
-interaction: AppendCursorStream
+interaction: ChatPanel
 ---
 
 ```system```
@@ -12,5 +12,4 @@ interaction: AppendCursorStream
 
 ```user```
 ${selection}
-
 

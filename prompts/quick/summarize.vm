@@ -1,6 +1,6 @@
 ---
 type: QuickAction
-name: Summarize
+name: 总结
 category: Generate
 language: markdown
 interaction: AppendCursorStream
@@ -14,3 +14,4 @@ You are an assistant helping summarize a document. Use this format, replacing te
 
 ```user```
 ${beforeCursor}
+
