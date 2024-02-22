@@ -10,7 +10,9 @@ ${frameworkContext}
 
 当前类相关的代码如下：
 
+```${language}
 ${beforeCursor}
+```
 
 用户的需求是：${selection}
 
