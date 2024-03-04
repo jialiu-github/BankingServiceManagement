@@ -20,5 +20,3 @@ data class UserDTO(
     val name: String,
     val surname: String? = null,
 )
-
-// 生成一个 java hello world
