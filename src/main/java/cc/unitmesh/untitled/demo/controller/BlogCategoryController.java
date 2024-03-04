@@ -6,7 +6,5 @@ import org.springframework.web.bind.annotation.RestController;
 public class BlogCategoryController {
     // devti://story/github/1
 
-    //    银行账户管理
-
     // Close a bank account
 }
