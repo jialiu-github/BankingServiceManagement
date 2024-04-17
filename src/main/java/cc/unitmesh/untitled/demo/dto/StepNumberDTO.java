@@ -24,5 +24,4 @@ public class StepNumberDTO {
     }
 
     public StepNumberDTO(){}
-
 }
