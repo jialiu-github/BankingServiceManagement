@@ -1,53 +1,33 @@
 package cc.unitmesh.untitled.demo.controller;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
-
-import cc.unitmesh.untitled.demo.service.MemberEntityAccountService;
 import org.junit.jupiter.api.Test;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
-import org.springframework.boot.test.mock.mockito.MockBean;
-import org.springframework.test.web.servlet.MockMvc;
-import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
-import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
+import org.mockito.junit.jupiter.MockitoExtension;
+import org.springframework.http.HttpStatus;
 
-@WebMvcTest(MemberController.class)
-public class MemberControllerTest {
+@ExtendWith(MockitoExtension.class)
+public class AccountControllerTest {
 
-    @Autowired
-    private MockMvc mockMvc;
+    @InjectMocks
+    private AccountController accountController;
 
-    @MockBean
+    @Mock
     private MemberEntityAccountService memberEntityAccountService;
 
     @Test
-    public void should_return_payment_limit_for_valid_account_id() throws Exception {
+    public void testUpdatePaymentLimit() {
         // Given
-        String accountId = "123";
-        String expectedPaymentLimit = "1000";
-        when(memberEntityAccountService.getPaymentLimitBy(accountId)).thenReturn(expectedPaymentLimit);
+        AccountPaymentLimitDto accountPaymentLimitDto = new AccountPaymentLimitDto();
+        accountPaymentLimitDto.setAccountId(123);
+        accountPaymentLimitDto.setPaymentLimit(1000);
 
         // When
-        mockMvc.perform(MockMvcRequestBuilders.get("/" + accountId + "/paymentLimit"))
-                .andExpect(MockMvcResultMatchers.status().isOk())
-                .andExpect(MockMvcResultMatchers.content().string(expectedPaymentLimit));
+        accountController.updatePaymentLimit(accountPaymentLimitDto);
 
         // Then
-        assertEquals(expectedPaymentLimit, memberEntityAccountService.getPaymentLimitBy(accountId));
-    }
-
-    @Test
-    public void should_return_not_found_for_invalid_account_id() throws Exception {
-        // Given
-        String accountId = "456";
-        when(memberEntityAccountService.getPaymentLimitBy(accountId)).thenReturn(null);
-
-        // When
-        mockMvc.perform(MockMvcRequestBuilders.get("/" + accountId + "/paymentLimit"))
-                .andExpect(MockMvcResultMatchers.status().isNotFound());
-
-        // Then
-        assertEquals(null, memberEntityAccountService.getPaymentLimitBy(accountId));
+        verify(memberEntityAccountService).updateAccount(123, 1000);
     }
 }
