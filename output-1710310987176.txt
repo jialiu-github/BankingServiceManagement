@@ -1,0 +1,23 @@
+// Given 数据库中已存在用户信息，包括用户ID、时间戳、心率数值
+// Given 用户ID为"user1"的心率列表中已存在3条记录
+// Given 用户ID为"user2"的心率列表中已存在2条记录
+// Given 用户ID为"user3"的心率列表中已存在1条记录
+// Given API接收到请求，包含用户ID和心率数值的列表
+// When 调用存储心率的API，传入用户ID为"user1"的心率列表
+// Then 用户ID为"user1"的心率列表应增加3条记录
+
+// Given 数据库中已存在用户信息，包括用户ID、时间戳、心率数值
+// Given 用户ID为"user1"的心率列表中已存在2条记录
+// Given 用户ID为"user2"的心率列表中已存在2条记录
+// Given 用户ID为"user3"的心率列表中已存在1条记录
+// Given API接收到请求，包含用户ID和心率数值的列表
+// When 调用存储心率的API，传入用户ID为"user2"的心率列表
+// Then 用户ID为"user2"的心率列表应增加2条记录
+
+// Given 数据库中已存在用户信息，包括用户ID、时间戳、心率数值
+// Given 用户ID为"user1"的心率列表中已存在3条记录
+// Given 用户ID为"user2"的心率列表中已存在2条记录
+// Given 用户ID为"user3"的心率列表中已存在1条记录
+// Given API接收到请求，包含用户ID和心率数值的列表
+// When 调用存储心率的API，传入用户ID为"user3"的心率列表
+// Then 用户ID为"user3"的心率列表应增加1条记录
