@@ -1,0 +1,17 @@
+Write unit test for following ${context.lang} code.
+
+${context.frameworkContext}
+
+Here is the source code to be tested:
+
+```$context.lang
+${context.sourceCode}
+```
+
+## if newFile
+#if( $context.isNewFile )
+Should include package and imports. Start method test code with Markdown code block here:
+#else
+Should include package and imports. Start ${context.testClassName} test code with Markdown code block here:
+#end
+

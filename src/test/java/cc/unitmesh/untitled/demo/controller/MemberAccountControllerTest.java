@@ -1,20 +1,23 @@
 package cc.unitmesh.untitled.demo.controller;
 
-import static org.mockito.Mockito.*;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
-
 import cc.unitmesh.untitled.demo.dto.AccountPaymentLimitDto;
 import cc.unitmesh.untitled.demo.service.MemberAccountService;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
+import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
+import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 
-@WebMvcTest(YourController.class)
-public class YourControllerTest {
+import java.time.Instant;
+
+import static org.mockito.Mockito.verify;
+
+@WebMvcTest(MemberAccountController.class)
+public class MemberAccountControllerTest {
 
     @Autowired
     private MockMvc mockMvc;
@@ -23,18 +26,25 @@ public class YourControllerTest {
     private MemberAccountService memberAccountService;
 
     @Test
-    public void testUpdatePaymentLimit() throws Exception {
+    public void should_update_payment_limit_successfully() throws Exception {
         // Given
-        AccountPaymentLimitDto accountPaymentLimitDto = new AccountPaymentLimitDto("12345", 1000.0);
+        AccountPaymentLimitDto accountPaymentLimitDto = new AccountPaymentLimitDto("12345", "1000", Instant.now(), "staff123");
 
         // When
-        mockMvc.perform(put("/paymentLimit")
+        mockMvc.perform(MockMvcRequestBuilders.put("/MemberEntityAccount/paymentLimit")
                 .contentType(MediaType.APPLICATION_JSON)
-                .content("{\"accountId\":\"12345\",\"paymentLimit\":1000.0}")
-                .accept(MediaType.APPLICATION_JSON))
-                .andExpect(status().isNoContent());
+                .content(asJsonString(accountPaymentLimitDto)))
+                .andExpect(MockMvcResultMatchers.status().isNoContent());
 
         // Then
-        verify(memberAccountService, times(1)).updateAccount("12345", 1000.0);
+        verify(memberAccountService).updateAccount(accountPaymentLimitDto.getAccountId(), accountPaymentLimitDto.getPaymentLimit());
+    }
+
+    private static String asJsonString(final Object obj) {
+        try {
+            return new ObjectMapper().writeValueAsString(obj);
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
     }
 }
