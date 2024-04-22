@@ -1,16 +1,14 @@
 package cc.unitmesh.untitled.demo.service;
 
-import cc.unitmesh.untitled.demo.dto.AccountPaymentLimitDto;
 import cc.unitmesh.untitled.demo.entity.MemberEntityAccount;
 import cc.unitmesh.untitled.demo.repository.MemberEntityAccountRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
-import java.util.Optional;
 
 @Service
-public class MemberEntityAccountService {
+public class MemberAccountService {
     @Autowired
     MemberEntityAccountRepository memberEntityAccountRepository;
 
