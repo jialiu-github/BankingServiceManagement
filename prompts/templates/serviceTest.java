@@ -1,5 +1,5 @@
 /* package  */
-/* import list */
+import /* some import  */
 @SpringBootTest
 class /* Here some be {ServiceName} */ ServiceTest {
 

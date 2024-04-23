@@ -15,7 +15,7 @@ public class MemberAccountController {
     @PutMapping("/paymentLimit")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void updatePaymentLimit(@RequestBody AccountPaymentLimitDto accountPaymentLimitDto) {
-        memberAccountService.updateAccount(accountPaymentLimitDto.getAccountId(), accountPaymentLimitDto.getPaymentLimit());
+        memberAccountService.updatePaymentLimit(accountPaymentLimitDto.getAccountId(), accountPaymentLimitDto.getPaymentLimit());
     }
 
     @GetMapping("/{accountId}/paymentLimit")

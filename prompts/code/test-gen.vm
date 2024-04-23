@@ -1,4 +1,4 @@
-Write unit test for following ${context.lang} code.
+As a senior developer, you are good at TDD. Please Write unit test for following ${context.lang} code.
 
 ${context.frameworkContext}
 
@@ -11,6 +11,12 @@ Here is the relate code maybe you can use
 This is the class where the source code resides:
     ${context.currentClass}
 #end
+
+The following is the business description related to the code under testing:
+
+```
+${context.ragContext}
+```
 
 Here is the source code to be tested:
 

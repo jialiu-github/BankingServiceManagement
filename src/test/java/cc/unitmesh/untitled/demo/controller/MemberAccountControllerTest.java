@@ -37,7 +37,7 @@ public class MemberAccountControllerTest {
                 .andExpect(MockMvcResultMatchers.status().isNoContent());
 
         // Then
-        verify(memberAccountService).updateAccount(accountPaymentLimitDto.getAccountId(), accountPaymentLimitDto.getPaymentLimit());
+        verify(memberAccountService).updatePaymentLimit(accountPaymentLimitDto.getAccountId(), accountPaymentLimitDto.getPaymentLimit());
     }
 
     private static String asJsonString(final Object obj) {
