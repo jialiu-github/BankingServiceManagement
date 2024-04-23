@@ -27,4 +27,6 @@ public class MemberEntityAccount {
 
     private Instant updateDate;
 
+    private BigDecimal balance;
+
 }
