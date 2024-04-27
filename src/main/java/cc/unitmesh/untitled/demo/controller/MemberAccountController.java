@@ -16,4 +16,7 @@ public class MemberAccountController {
     public String getPaymentLimit(@PathVariable String accountId) {
         return memberAccountService.getPaymentLimitBy(accountId);
     }
+
+    //update payment limit by account id
+
 }
